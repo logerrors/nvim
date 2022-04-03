@@ -5,9 +5,9 @@ end
 
 local servers = {
 	sumneko_lua = require("user.lsp.settings.sumneko_lua"), -- lua/lsp/config/lua.lua
-	jsonls = require("user.lsp.settings.jsonls")
-	cmake = require("user.lsp.settings.cmake")
-	ccls = require("user.lsp.settings.ccls")
+	jsonls = require("user.lsp.settings.jsonls"),
+	cmake = require("user.lsp.settings.cmake"),
+	ccls = require("user.lsp.settings.ccls"),
 	-- rust_analyzer = require("lsp.lang.rust"),
 	-- jsonls = require("lsp.lang.json"),
 	-- tsserver = require("lsp.config.ts"),
