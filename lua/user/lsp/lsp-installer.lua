@@ -5,9 +5,9 @@ end
 
 local servers = {
 	sumneko_lua = require("user.lsp.settings.sumneko_lua"), -- lua/lsp/config/lua.lua
-	jsonls = require("user.lsp.settings.jsonls"),
 	cmake = require("user.lsp.settings.cmake"),
 	ccls = require("user.lsp.settings.ccls"),
+  clangd = require("user.lsp.settings.clangd")
 	-- rust_analyzer = require("lsp.lang.rust"),
 	-- jsonls = require("lsp.lang.json"),
 	-- tsserver = require("lsp.config.ts"),
@@ -34,7 +34,7 @@ lsp_installer.on_server_ready(function(server)
 	}
 
 	local config = servers[server.name]
-	if config != nil then
+	if config ~= nil then
 		opts = vim.tbl_deep_extend("force", config, opts)
 	end
 

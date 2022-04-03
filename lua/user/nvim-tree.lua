@@ -35,6 +35,14 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   disable_netrw = true,
+  actions = {
+        open_file = {
+            -- 首次打开大小适配
+            resize_window = true,
+            -- 打开文件时关闭 tree
+            quit_on_open = false,
+        },
+  },
   hijack_netrw = true,
   open_on_setup = false,
   ignore_ft_on_setup = {
@@ -42,7 +50,6 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
-  auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -80,9 +87,11 @@ nvim_tree.setup {
   view = {
     width = 30,
     height = 30,
-    hide_root_folder = false,
     side = "left",
-    auto_resize = true,
+    preserve_window_proportions = false,
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes",
     mappings = {
       custom_only = false,
       list = {
@@ -91,8 +100,6 @@ nvim_tree.setup {
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
-    number = false,
-    relativenumber = false,
   },
   trash = {
     cmd = "trash",
